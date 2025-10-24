@@ -125,6 +125,14 @@ export default [
           bracketSpacing: true, //  Có khoảng giữa { a: 1 }
         },
       ],
+
+      // Cấm import sâu (deep import) theo mẫu này, để tránh bundle nặng và mất tree-shaking-----------------------------
+      'no-restricted-imports': [
+        'error', // Mức độ cảnh báo
+        {
+          patterns: ['@mui/*/*/*'], // Cấm import sâu từ @mui (chỉ cho phép import cấp root)
+        },
+      ],
     },
 
     //  Tự động phát hiện version React đang dùng
